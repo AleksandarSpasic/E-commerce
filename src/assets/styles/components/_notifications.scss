@@ -1,0 +1,38 @@
+.notification_style {
+  padding: 1rem;
+  box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+  border-radius: 0 0.428rem 0.428rem 0;
+  z-index: 99999;
+  font-weight: 500;
+  background: $color-white;
+  color: $color-grey;
+  font-weight: 400;
+  font-size: 0.9em;
+  @include flex-align-center;
+  border-left: 3px solid transparent;
+  &.success {
+    border-color: $color-green;
+    span {
+      color: $color-green;
+    }
+  }
+  &.danger {
+    border-color: $color-red;
+    span {
+      color: $color-red;
+    }
+  }
+  span {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    @include flex-center;
+    margin-right: 1rem;
+    color: $color-white;
+    svg {
+      width: 25px;
+      height: 25px;
+      font-size: 24px;
+    }
+  }
+}

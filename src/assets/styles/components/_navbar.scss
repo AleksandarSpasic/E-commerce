@@ -1,0 +1,16 @@
+header.navbar_inner {
+  padding: 40px 0;
+  width: 100%;
+  @include media-max(900px) {
+    padding: 33px 0;
+  }
+  .container {
+    .navbar_outer {
+      width: 100%;
+      @include flex-between;
+      .card_svg_icon {
+        cursor: pointer;
+      }
+    }
+  }
+}

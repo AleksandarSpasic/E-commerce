@@ -1,0 +1,20 @@
+footer.footer_inner {
+  margin: auto 0 20px 0;
+  .container {
+    .footer_outer {
+      p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 23px;
+        letter-spacing: 0.05em;
+        color: #bcbcbc;
+        @include media-max(900px) {
+          text-align: center;
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}

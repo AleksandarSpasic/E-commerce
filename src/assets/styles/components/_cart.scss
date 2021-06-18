@@ -1,0 +1,169 @@
+.cart_inner {
+  z-index: 99999;
+  &.active {
+    .cart_mask {
+      display: block;
+    }
+    .cart_outer {
+      transform: translateX(0);
+    }
+  }
+  .cart_mask {
+    @include fixed-full;
+    background: rgba(16, 16, 16, 0.5);
+    backdrop-filter: blur(8px);
+    display: none;
+    @include transition;
+  }
+  .cart_outer {
+    background: $color-white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 439px;
+    display: grid;
+    grid-template-rows: 92px 1fr 205px;
+    @include media-max(500px) {
+      width: 100%;
+    }
+    @include transition;
+    transform: translateX(500px);
+    .cart_header {
+      @include flex-between;
+      padding: 0 41px 0 37px;
+      border-bottom: 1px solid $color-grey-border;
+      margin-bottom: 24px;
+      @include media-max(500px) {
+        padding: 0 29px 0 25px;
+      }
+      p {
+        color: $color-dark;
+        font-family: CanelaRegular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+        letter-spacing: 0.05em;
+      }
+      svg {
+        cursor: pointer;
+      }
+    }
+    .cart_body {
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      .cart_item {
+        padding: 10px 34px 10px 37px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 73px 1fr 63px;
+        grid-gap: 32px;
+        @include media-max(500px) {
+          padding: 0 22px 0 25px;
+          grid-gap: 15px;
+        }
+        @include media-max(360px) {
+          grid-template-columns: 60px 1fr 63px;
+        }
+        img {
+          object-fit: contain;
+        }
+        h4 {
+          font-family: CanelaRegular;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 24px;
+          letter-spacing: 0.05em;
+          margin-bottom: 6px;
+          @include media-max(450px) {
+            font-size: 20px;
+          }
+          @include media-max(360px) {
+            font-size: 16px;
+            margin-bottom: 0;
+          }
+        }
+        p {
+          font-family: TelegrafRegular;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 23px;
+          letter-spacing: 0.05em;
+          @include media-max(360px) {
+            font-size: 14px;
+          }
+        }
+        span {
+          display: block;
+          width: fit-content;
+          font-family: TelegrafRegular;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.05em;
+          color: $color-red;
+        }
+        .cart_item_icons {
+          display: grid;
+          grid-template-columns: repeat(3, 21px);
+          align-items: center;
+          justify-items: center;
+
+          div {
+            font-family: TelegrafRegular;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 23px;
+            text-align: center;
+            letter-spacing: 0.05em;
+            color: $color-dark;
+          }
+        }
+      }
+    }
+    .cart_footer {
+      padding-top: 20px;
+      p {
+        font-family: TelegrafRegular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 23px;
+        letter-spacing: 0.05em;
+        color: $color-dark;
+        padding: 0 10px 0 49px;
+      }
+      .btn_holder {
+        padding: 42px 49px 31px 49px;
+        border-top: 1px solid $color-grey-border;
+        margin-top: 35px;
+        @include media-max(500px) {
+          padding: 42px 37px 31px 37px;
+        }
+        @include media-max(360px) {
+          padding: 30px;
+        }
+        button {
+          width: 100%;
+          height: 53px;
+          border-radius: 0;
+          font-family: TelegrafRegular;
+          background: $color-orange;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
