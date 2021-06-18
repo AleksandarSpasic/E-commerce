@@ -7,7 +7,6 @@ const PrevArrowSvg = () => (
     height="36"
     fill="none"
     viewBox="0 0 36 36"
-    className="prev_arrow_svg_icon"
   >
     <path
       fill="#fff"

@@ -28,7 +28,7 @@ const Home = () => {
       <div className="container">
         <div className="home_screen_content">
           <TextAbout />
-          <ProductsSlider products={products} />
+          {products.length ? <ProductsSlider products={products} /> : null}
         </div>
       </div>
     </ScreenWrapper>

@@ -4,6 +4,12 @@
   }
 }
 
+@mixin media-min($media) {
+  @media only screen and (min-width: $media) {
+    @content;
+  }
+}
+
 @mixin transition {
   transition: all 0.2s ease-in-out;
 }

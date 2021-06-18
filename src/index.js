@@ -10,6 +10,9 @@ import configureStore from 'redux/store';
 import { translationMessages } from './i18n';
 
 import 'assets/styles/App.scss';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
 
 const initialState = {};
 const store = configureStore(initialState, history);

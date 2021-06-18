@@ -15,12 +15,19 @@ body {
 html,
 body,
 #root {
-  @include full-size;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background: $color-dark;
 }
 
 #root {
   background: $color-dark;
   @include flex-column;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 h1,
