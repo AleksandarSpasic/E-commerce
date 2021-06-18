@@ -14,7 +14,7 @@ const NotFound = () => {
       <div className='container'>
         <div className='not_found_content'>
           <h1>
-            <FormatMessage>{messages.text}</FormatMessage>
+            <FormatMessage>{messages.helmet}</FormatMessage>
           </h1>
           <Button onClick={goBack}>
             <FormatMessage>{messages.button}</FormatMessage>

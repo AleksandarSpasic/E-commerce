@@ -6,5 +6,5 @@ export default defineMessages({
   helmet: {
     id: `${scope}.helmet`,
     defaultMessage: 'Home'
-  }
+  },
 });
