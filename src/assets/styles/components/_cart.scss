@@ -54,6 +54,9 @@
       &::-webkit-scrollbar {
         width: 0;
       }
+      .empty_cart {
+        text-align: center;
+      }
       .cart_item {
         padding: 10px 34px 10px 37px;
         display: grid;
@@ -113,7 +116,11 @@
           grid-template-columns: repeat(3, 21px);
           align-items: center;
           justify-items: center;
-
+          span {
+            @include full-size;
+            @include flex-center;
+            cursor: pointer;
+          }
           div {
             font-family: TelegrafRegular;
             font-style: normal;

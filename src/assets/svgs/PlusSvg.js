@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PlusSvg = () => (
+const PlusSvg = props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="9"
@@ -8,6 +8,7 @@ const PlusSvg = () => (
     fill="none"
     viewBox="0 0 9 9"
     className="plus_svg_icon"
+    {...props}
   >
     <path
       fill="#181818"

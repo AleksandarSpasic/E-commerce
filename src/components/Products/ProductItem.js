@@ -1,11 +1,28 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { cutText } from 'utils/cutText';
+import { setCartItems } from 'components/Cart/redux/actions';
+import { makeSelectCartItems } from 'components/Cart/redux/selectors';
 import Image from 'components/Image/Loadable';
 import Button from 'components/Button';
 
 const ProductItem = ({ product }) => {
-  const { image, title, description, price } = product;
+  const { id: productId, image, title, description, price } = product;
+  const dispatch = useDispatch();
+  const cartItems = useSelector(makeSelectCartItems());
 
-  const cutText = (text, limit) => text.length > limit ? text.substr(0, limit) + '...' : text;
+  const addToCart = () => {
+    const sameItem = cartItems.find(({ id }) => id === productId);
+    if (sameItem) {
+      const copy = { ...sameItem };
+      copy.quantity++;
+      const filtered = cartItems.filter(({ id }) => id !== productId);
+      dispatch(setCartItems([...filtered, copy]));
+    } else {
+      dispatch(setCartItems([...cartItems, { ...product, quantity: 1 }]));
+    }
+  };
 
   return (
     <div className="product_item">
@@ -15,7 +32,7 @@ const ProductItem = ({ product }) => {
       <h2>{cutText(title, 20)}</h2>
       <p>{cutText(description, 40)}</p>
       <h6>$ {price}</h6>
-      <Button onClick={() => console.log('clocl')}>Add to cart</Button>
+      <Button onClick={addToCart}>Add to cart</Button>
     </div>
   );
 };

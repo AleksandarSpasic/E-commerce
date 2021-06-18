@@ -3,6 +3,9 @@ const KEY = '[Cart]';
 const types = {
   FETCH_CART_ITEMS: `${KEY} FETCH_CART_ITEMS`,
   SET_CART_ITEMS: `${KEY} SET_CART_ITEMS`,
+
+  ADD_NEW_CART_REQUEST: `${KEY} ADD_NEW_CART_REQUEST`,
+  ADD_NEW_CART_SUCCESS: `${KEY} ADD_NEW_CART_SUCCESS`
 };
 
 export default types;
