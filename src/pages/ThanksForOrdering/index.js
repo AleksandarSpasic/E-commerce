@@ -18,10 +18,10 @@ const ThanksForOrdering = () => {
   }, [data, push]);
 
   return (
-    <ScreenWrapper className="thanks_for_ordering" title={messages.helmet}>
-      <div className="container">
+    <ScreenWrapper className='thanks_for_ordering' title={messages.helmet}>
+      <div className='container'>
         {data && (
-          <div className="thanks_for_ordering_content">
+          <div className='thanks_for_ordering_content'>
             <h1>
               <FormatMessage>{messages.title}</FormatMessage>
             </h1>

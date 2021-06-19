@@ -24,9 +24,9 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <ScreenWrapper className="home" title={messages.helmet}>
-      <div className="container">
-        <div className="home_screen_content">
+    <ScreenWrapper className='home' title={messages.helmet}>
+      <div className='container'>
+        <div className='home_screen_content'>
           <TextAbout />
           {products.length ? <ProductsSlider products={products} /> : null}
         </div>

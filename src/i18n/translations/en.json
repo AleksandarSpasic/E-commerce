@@ -1,3 +1,23 @@
 {
-  "global.server_error": "Server error"
+  "not_found.helmet": "Page Not Found",
+  "not_found.button": "Go back",
+
+  "thanks_for_ordering.helmet": "Thanks For Ordering",
+  "thanks_for_ordering.title": "Thanks for ordering",
+  "thanks_for_ordering.order_date": "Order date:",
+  "thanks_for_ordering.order_id": "Order id:",
+
+  "home.helmet": "Home",
+  "home.demo": "Demo",
+  "home.ecommerce": "Ecommerce",
+  "home.about": "Demo project to see if the candidate",
+  "home.about2": "is a good fit for the React/Redux position.",
+
+  "add_to_cart.add_to_cart": "Add to cart",
+
+  "cart.cart": "Cart",
+  "cart.total": "Total price: ",
+  "cart.remove": "remove",
+  "cart.checkout": "Checkout",
+  "cart.empty_cart": "Cart is empty"
 }

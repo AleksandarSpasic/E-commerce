@@ -10,7 +10,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const ProductsSlider = ({ products }) => {
   return (
-    <div className="products_slider">
+    <div className='products_slider'>
       <Swiper
         spaceBetween={100}
         slidesPerView={2.5}
@@ -56,11 +56,11 @@ const ProductsSlider = ({ products }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="swiper_navigations">
-        <div className="swiper-button-prev swiper-button">
+      <div className='swiper_navigations'>
+        <div className='swiper-button-prev swiper-button'>
           <PrevArrowSvg />
         </div>
-        <div className="swiper-button-next swiper-button">
+        <div className='swiper-button-next swiper-button'>
           <NextArrowSvg />
         </div>
       </div>

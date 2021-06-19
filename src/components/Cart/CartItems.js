@@ -8,6 +8,8 @@ import Image from 'components/Image/Loadable';
 import { cutText } from 'utils/cutText';
 import { useDispatch } from 'react-redux';
 import { setCartItems } from './redux/actions';
+import FormatMessage from 'i18n/FormatMessage';
+import messages from './messages';
 
 const CartItems = ({ items }) => {
   const dispatch = useDispatch();
@@ -35,17 +37,19 @@ const CartItems = ({ items }) => {
     dispatch(setCartItems(items.filter(el => el.id !== id)));
 
   return (
-    <div className="cart_body">
+    <div className='cart_body'>
       {items.length ? (
         sortBy(items, ['id']).map(({ id, image, title, price, quantity }, index) => (
-          <div className="cart_item" key={id}>
+          <div className='cart_item' key={id}>
             <Image src={image} alt={title} />
-            <div className="cart_item_content">
+            <div className='cart_item_content'>
               <h4>{cutText(title, 20)}</h4>
               <p>$ {(price * quantity).toFixed(2)}</p>
-              <span onClick={() => handleDelete(id)}>remove</span>
+              <span onClick={() => handleDelete(id)}>
+               <FormatMessage>{messages.remove}</FormatMessage>
+              </span>
             </div>
-            <div className="cart_item_icons">
+            <div className='cart_item_icons'>
               <span onClick={() => handleDecrement(id)}>
                 <MinusSvg />
               </span>
@@ -57,7 +61,9 @@ const CartItems = ({ items }) => {
           </div>
         ))
       ) : (
-        <p className="empty_cart">Cart is empty</p>
+        <p className='empty_cart'>
+          <FormatMessage>{messages.empty_cart}</FormatMessage>
+        </p>
       )}
     </div>
   );

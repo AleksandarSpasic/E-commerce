@@ -6,6 +6,8 @@ import { setCartItems } from 'components/Cart/redux/actions';
 import { makeSelectCartItems } from 'components/Cart/redux/selectors';
 import Image from 'components/Image/Loadable';
 import Button from 'components/Button';
+import FormatMessage from 'i18n/FormatMessage';
+import messages from './messages';
 
 const ProductItem = ({ product }) => {
   const { id: productId, image, title, description, price } = product;
@@ -25,14 +27,18 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <div className="product_item">
-      <div className="img">
+    <div className='product_item'>
+      <div className='img'>
         <Image src={image} />
       </div>
       <h2>{cutText(title, 20)}</h2>
       <p>{cutText(description, 40)}</p>
       <h6>$ {price}</h6>
-      <Button onClick={addToCart}>Add to cart</Button>
+      <Button onClick={addToCart}>
+        <FormatMessage>
+          {messages.add_to_cart}
+        </FormatMessage>
+      </Button>
     </div>
   );
 };
